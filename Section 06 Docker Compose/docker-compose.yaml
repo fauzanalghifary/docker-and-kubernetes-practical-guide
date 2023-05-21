@@ -4,21 +4,10 @@ services:
     image: "mongo"
     volumes:
       - data:/data/db
-    # container_name: mongodb
-    # environment:
-    #   - MONGO_INITDB_ROOT_USERNAME=pojan
-    #   - MONGO_INITDB_ROOT_PASSWORD=pojan
     env_file:
       - ./env/mongo.env
-    # networks:
-    #   - goals-net
   backend:
     build: ./backend
-    # build:
-    #   context: ./backend
-    #   dockerfile: Dockerfile
-    #   args:
-    # some-arg:1
     ports:
       - "80:80"
     volumes:
